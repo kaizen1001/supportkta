@@ -492,7 +492,7 @@
         }
         .card-action:hover { gap: 12px; }
 
-        /* --- NÂNG CẤP: COST / QUOTE CALCULATOR SECTION --- */
+        /* --- COST / QUOTE CALCULATOR SECTION --- */
         .calculator-box {
             background: var(--surface-color);
             border: 1px solid var(--border-color);
@@ -554,7 +554,7 @@
         .calc-total-label { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; }
         .calc-total-price { font-size: 2.2rem; font-weight: 800; color: var(--primary); margin: 10px 0; }
 
-        /* --- NÂNG CẤP: TIMELINE / ROADMAP --- */
+        /* --- TIMELINE / ROADMAP --- */
         .timeline-wrapper {
             position: relative;
             max-width: 800px;
@@ -1232,7 +1232,7 @@
             </div>
         </section>
 
-        <!-- --- NÂNG CẤP: COST / QUOTE CALCULATOR SECTION --- -->
+        <!-- COST / QUOTE CALCULATOR SECTION -->
         <section class="reveal" id="calculator">
             <div class="section-header">
                 <span class="section-tag">Công Cụ Thông Minh</span>
@@ -1309,7 +1309,7 @@
                         <a href="https://kaizen1001.github.io/portfolio/" target="_blank" class="project-link-btn">Truy cập Website</a>
                     </div>
                 </div>
-                <!-- Project 2 (UPDATED: Facebook Link) -->
+                <!-- Project 2 -->
                 <div class="project-card" data-category="media">
                     <div class="project-banner" style="background: linear-gradient(135deg, #0f172a, #1e293b);"></div>
                     <div class="project-details">
@@ -1412,7 +1412,6 @@
                 <h4>Thông Tin Liên Hệ</h4>
                 <ul>
                     <li><i class="fa-solid fa-location-dot"></i> Đại học Trà Vinh, Vĩnh Long</li>
-                    <!-- UPDATED EMAIL -->
                     <li><i class="fa-solid fa-envelope"></i> kta.teams.2026@gmail.com</li>
                     <li><i class="fa-solid fa-globe"></i> <a href="https://kaizen1001.github.io/portfolio/" target="_blank" style="color:var(--text-muted)">Portfolio Website</a></li>
                 </ul>
@@ -1507,76 +1506,39 @@
             }
         });
 
-            // --- TÍCH HỢP GEMINI AI CHATBOT THỰC TẾ ---
-const API_KEY = "AQ.Ab8RN6JdKG1OQQza4bxnyQpwaj6DlRaYrbGIRmNgPUw7SroLkQ"; // Key chính xác của bạn
+        // THÔNG BÁO TÍNH NĂNG AI ĐANG PHÁT TRIỂN
+        const aiInput = document.getElementById('ai-chat-input');
+        const aiSend = document.getElementById('ai-chat-send');
+        const aiBody = document.getElementById('ai-chat-body');
 
-const aiInput = document.getElementById('ai-chat-input');
-const aiSend = document.getElementById('ai-chat-send');
-const aiBody = document.getElementById('ai-chat-body');
+        function sendAiMessage() {
+            const msg = aiInput.value.trim();
+            if(!msg) return;
 
-async function sendAiMessage() {
-    const msg = aiInput.value.trim();
-    if(!msg) return;
+            // 1. Hiển thị tin nhắn người dùng
+            aiBody.innerHTML += `<div class="chat-msg user">${msg}</div>`;
+            aiInput.value = '';
+            aiBody.scrollTop = aiBody.scrollHeight;
 
-    // 1. Hiển thị tin nhắn người dùng
-    aiBody.innerHTML += `<div class="chat-msg user">${msg}</div>`;
-    aiInput.value = '';
-    aiBody.scrollTop = aiBody.scrollHeight;
+            // 2. Tạo trạng thái "Đang xử lý..."
+            const loadingId = 'loading-' + Date.now();
+            aiBody.innerHTML += `<div class="chat-msg bot" id="${loadingId}"><i class="fa-solid fa-spinner fa-spin"></i> Đang xử lý...</div>`;
+            aiBody.scrollTop = aiBody.scrollHeight;
 
-    // 2. Tạo trạng thái "Đang suy nghĩ..."
-    const loadingId = 'loading-' + Date.now();
-    aiBody.innerHTML += `<div class="chat-msg bot" id="${loadingId}"><i class="fa-solid fa-spinner fa-spin"></i> Đang suy nghĩ...</div>`;
-    aiBody.scrollTop = aiBody.scrollHeight;
-
-    try {
-        // 3. Gửi yêu cầu (ĐÃ SỬA CÁCH GỬI API KEY QUA HEADER x-goog-api-key)
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent`, {
-            method: 'POST',
-            headers: { 
-                'Content-Type': 'application/json',
-                'x-goog-api-key': API_KEY  // <--- Gắn key ở đây sẽ không bao giờ bị lỗi
-            },
-            body: JSON.stringify({
-                contents: [{
-                    role: "user",
-                    parts: [{ text: msg }]
-                }],
-                systemInstruction: {
-                    parts: [{ 
-                        text: "Bạn là KTA Assistant - Trợ lý AI thực thụ của Kim Tuấn An (KTA.Teams). Bạn thông minh, thân thiện, có thể trả lời BẤT KỲ CÂU HỎI NÀO của người dùng bằng tiếng Việt một cách mượt mà và ngắn gọn."
-                    }]
-                }
-            })
-        });
-
-        const data = await response.json();
-
-        // 4. Xử lý phản hồi từ AI
-        if (data.candidates && data.candidates[0]?.content?.parts[0]?.text) {
-            const botReply = data.candidates[0].content.parts[0].text;
-            const formattedReply = botReply.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>').replace(/\n/g, '<br>');
-            document.getElementById(loadingId).innerHTML = formattedReply;
-        } else if (data.error) {
-            document.getElementById(loadingId).innerText = `Lỗi từ Google (${data.error.code}): ${data.error.message}`;
-        } else {
-            document.getElementById(loadingId).innerText = "Chưa nhận được phản hồi từ AI, bạn thử lại nhé!";
+            // 3. Phản hồi thông báo hệ thống đang phát triển
+            setTimeout(() => {
+                document.getElementById(loadingId).innerHTML = `AI đang được phát triển để đem đến trải nghiệm tốt hơn! Vui lòng liên hệ trực tiếp qua phần <a href="#contact" style="color: var(--primary); font-weight: bold;">Liên Hệ</a> bên dưới để được hỗ trợ nhanh nhất nhé.`;
+                aiBody.scrollTop = aiBody.scrollHeight;
+            }, 800);
         }
 
-    } catch (error) {
-        console.error("Lỗi Fetch:", error);
-        document.getElementById(loadingId).innerText = "Lỗi kết nối mạng hoặc không thể gọi API!";
-    }
-
-    aiBody.scrollTop = aiBody.scrollHeight;
-}
-
-// Bắt sự kiện Click nút gửi & Nhấn phím Enter
-if (aiSend) aiSend.addEventListener('click', sendAiMessage);
-if (aiInput) {
-    aiInput.addEventListener('keydown', (e) => { 
-        if(e.key === 'Enter') sendAiMessage(); 
-    });
-}
+        // Bắt sự kiện Click nút gửi & Nhấn phím Enter
+        if (aiSend) aiSend.addEventListener('click', sendAiMessage);
+        if (aiInput) {
+            aiInput.addEventListener('keydown', (e) => { 
+                if(e.key === 'Enter') sendAiMessage(); 
+            });
+        }
 
         // 5. Cost Calculator Logic
         const mainServiceSelect = document.getElementById('calc-main-service');
