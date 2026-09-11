@@ -244,13 +244,13 @@
 
         /* Hero Section */
         .hero-section {
-            min-height: 85vh;
+            min-height: 75vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
         .badge-status {
             background: rgba(236, 72, 153, 0.1);
@@ -302,7 +302,7 @@
             gap: 15px;
             flex-wrap: wrap;
             justify-content: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
         .btn-main {
             padding: 13px 28px;
@@ -321,6 +321,39 @@
         .btn-primary:hover { background: #e2e8f0; transform: translateY(-2px); }
         .btn-secondary { background: var(--surface-color); color: var(--text-main); border: 1px solid var(--border-color); backdrop-filter: blur(10px); }
         .btn-secondary:hover { background: rgba(255,255,255,0.08); border-color: var(--text-muted); transform: translateY(-2px); }
+
+        /* --- WEBSITE INTRO BANNER --- */
+        .website-intro-card {
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.08), rgba(139, 92, 246, 0.08));
+            border: 1px solid var(--border-hover);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 60px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 30px;
+            align-items: center;
+            backdrop-filter: blur(10px);
+        }
+        .intro-content h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 12px; color: #fff; }
+        .intro-content p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 15px; }
+        .intro-features {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .feature-item {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            padding: 12px 18px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .feature-item i { color: var(--primary); font-size: 1.1rem; }
 
         /* Quick Stats Grid */
         .stats-grid {
@@ -620,6 +653,57 @@
             color: #fff;
         }
 
+        /* --- CUSTOMER SERVICE CONFIGURATOR / REQUEST BUILDER --- */
+        .service-configurator {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 35px;
+            max-width: 750px;
+            margin: 0 auto 50px;
+            backdrop-filter: blur(15px);
+        }
+        .service-configurator h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 8px; text-align: center; }
+        .service-configurator p { color: var(--text-muted); font-size: 0.9rem; text-align: center; margin-bottom: 25px; }
+        .service-options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        .service-opt-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .service-opt-card:hover { border-color: var(--border-hover); background: rgba(255,255,255,0.05); }
+        .service-opt-card.selected {
+            border-color: var(--primary);
+            background: rgba(236, 72, 153, 0.08);
+        }
+        .service-opt-card input[type="checkbox"] { accent-color: var(--primary); width: 18px; height: 18px; margin-top: 2px; }
+        .service-opt-info h4 { font-size: 0.92rem; font-weight: 700; margin-bottom: 4px; }
+        .service-opt-info span { font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; display: block; }
+        .btn-apply-service {
+            width: 100%;
+            background: rgba(236, 72, 153, 0.15);
+            border: 1px solid rgba(236, 72, 153, 0.4);
+            color: #f472b6;
+            padding: 12px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .btn-apply-service:hover { background: var(--primary); color: #fff; }
+
         /* --- FAQ SECTION --- */
         .faq-wrapper {
             max-width: 750px;
@@ -745,6 +829,30 @@
         .footer-col ul { list-style: none; }
         .footer-col a:hover { color: var(--primary); }
         .footer-col i { color: var(--primary); margin-right: 10px; width: 16px; }
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            color: var(--text-main);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        .social-links a:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: #fff;
+            transform: translateY(-2px);
+        }
         .footer-bottom {
             text-align: center;
             border-top: 1px solid var(--border-color);
@@ -786,6 +894,7 @@
             .mobile-toggle { display: block; }
             .form-row { grid-template-columns: 1fr; }
             .stats-grid { grid-template-columns: 1fr; }
+            .website-intro-card { grid-template-columns: 1fr; }
             .terminal-window { width: calc(100vw - 20px); right: 10px; bottom: 150px; }
         }
     </style>
@@ -814,7 +923,7 @@
 
     <!-- Navigation Bar -->
     <header>
-        <a href="#" class="brand"><i class="fa-solid fa-terminal" style="color: var(--primary);"></i> KTA<span>.TEAMS</span></a>
+        <a href="https://kaizen1001.github.io/portfolio/" target="_blank" class="brand"><i class="fa-solid fa-terminal" style="color: var(--primary);"></i> KTA<span>.TEAMS</span></a>
         <ul class="nav-menu">
             <li><a href="#about" class="active">Hồ Sơ</a></li>
             <li><a href="#workspace">Tiện Ích</a></li>
@@ -896,6 +1005,33 @@
             </div>
         </section>
 
+        <!-- --- GIỚI THIỆU TỔNG QUAN TRANG WEB --- -->
+        <section class="reveal">
+            <div class="website-intro-card">
+                <div class="intro-content">
+                    <span class="section-tag" style="margin-bottom: 6px;">Tổng Quan Nền Tảng</span>
+                    <h3>Về KTA Digital Workspace</h3>
+                    <p>
+                        Đây là trung tâm điều phối và lưu trữ dự án cá nhân được xây dựng theo phong cách hiện đại, tích hợp công nghệ web tiên tiến cùng các widget tương tác thông minh như Terminal dòng lệnh và Mini Game.
+                    </p>
+                    <p style="margin-bottom: 0;">
+                        Khách hàng và bạn bè có thể dễ dàng xem hồ sơ năng lực, tìm hiểu các giải pháp truyền thông sự kiện, hoặc gửi yêu cầu đặt dịch vụ nhanh chóng chỉ với vài cú nhấp chuột.
+                    </p>
+                </div>
+                <div class="intro-features">
+                    <div class="feature-item">
+                        <i class="fa-solid fa-laptop-code"></i> Giao diện chuẩn UI/UX, responsive mượt mà.
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-terminal"></i> Terminal giả lập tra cứu thông tin cá nhân.
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-paper-plane"></i> Tích hợp Google Apps Script nhận dữ liệu tức thì.
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Workspace & Tools Section -->
         <section class="reveal" id="workspace">
             <div class="section-header">
@@ -915,7 +1051,7 @@
                     <div class="card-icon"><i class="fa-solid fa-code"></i></div>
                     <h3>Phát Triển Web Portfolio</h3>
                     <p>Xây dựng các landing page cá nhân, không gian workspace trực tuyến tốc độ cao, giao diện hiện đại tối ưu trên mọi thiết bị.</p>
-                    <a href="#contact" class="card-action">Xem giải pháp <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="https://kaizen1001.github.io/portfolio/" target="_blank" class="card-action">Xem Portfolio <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
                 <div class="card-box">
                     <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
@@ -959,29 +1095,72 @@
                 <div class="project-card" data-category="web">
                     <div class="project-banner" style="background: linear-gradient(135deg, #1e1b4b, #311042);"></div>
                     <div class="project-details">
-                        <h3>KTA Digital Workspace</h3>
-                        <p>Hệ thống không gian làm việc cá nhân tích hợp terminal mô phỏng và widget tiện ích đa năng.</p>
-                        <a href="#" class="project-link-btn">Xem Chi Tiết</a>
+                        <h3>KTA Digital Portfolio</h3>
+                        <p>Trang Portfolio cá nhân chính thức được thiết kế hiện đại, tích hợp terminal mô phỏng và không gian làm việc số.</p>
+                        <a href="https://kaizen1001.github.io/portfolio/" target="_blank" class="project-link-btn">Truy cập Website</a>
                     </div>
                 </div>
-                <!-- Project 2 -->
+                <!-- Project 2 (Updated link to Portfolio) -->
                 <div class="project-card" data-category="media">
                     <div class="project-banner" style="background: linear-gradient(135deg, #0f172a, #1e293b);"></div>
                     <div class="project-details">
-                        <h3>Ấn Phẩm Sự Kiện TVU</h3>
-                        <p>Thiết kế bộ nhận diện truyền thông và banner cổ động cho các chiến dịch tình nguyện tại Đại học Trà Vinh.</p>
-                        <a href="#" class="project-link-btn">Xem Chi Tiết</a>
+                        <h3>Ấn Phẩm Sự Kiện</h3>
+                        <p>Thiết kế bộ nhận diện truyền thông và banner cổ động cho các chiến dịch tình nguyện.</p>
+                        <a href="https://kaizen1001.github.io/portfolio/" target="_blank" class="project-link-btn">Xem trên Portfolio</a>
                     </div>
                 </div>
                 <!-- Project 3 -->
                 <div class="project-card" data-category="tools">
                     <div class="project-banner" style="background: linear-gradient(135deg, #18181b, #27272a);"></div>
                     <div class="project-details">
-                        <h3>Smart Linktree Portfolio</h3>
-                        <p>Trang tổng hợp liên kết cá nhân tối ưu hóa tốc độ tải và hiệu ứng hiển thị cao cấp cho nhà sáng tạo nội dung.</p>
-                        <a href="#" class="project-link-btn">Xem Chi Tiết</a>
+                        <h3>KTA TikTok Showcase</h3>
+                        <p>Kênh chia sẻ các video, hình ảnh đời sống sinh viên và các khoảnh khắc tại Đại học Trà Vinh.</p>
+                        <a href="https://www.tiktok.com/@tuananpf47" target="_blank" class="project-link-btn">Xem kênh TikTok</a>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- --- CUSTOMER SERVICE SELECTION CONFIGURATOR --- -->
+        <section class="reveal">
+            <div class="service-configurator">
+                <h3><i class="fa-solid fa-list-check" style="color: var(--primary);"></i> Lựa Chọn Dịch Vụ & Yêu Cầu Của Bạn</h3>
+                <p>Khách hàng có thể chọn các hạng mục cần hỗ trợ dưới đây để hệ thống tự động điền vào biểu mẫu liên hệ.</p>
+                
+                <div class="service-options-grid">
+                    <label class="service-opt-card" onclick="toggleServiceCard(this)">
+                        <input type="checkbox" name="service_choice" value="Phát triển Web Portfolio cá nhân">
+                        <div class="service-opt-info">
+                            <h4>Web Portfolio</h4>
+                            <span>Thiết kế trang web cá nhân, landing page chuẩn hiện đại.</span>
+                        </div>
+                    </label>
+                    <label class="service-opt-card" onclick="toggleServiceCard(this)">
+                        <input type="checkbox" name="service_choice" value="Truyền thông sự kiện Đoàn - Hội TVU">
+                        <div class="service-opt-info">
+                            <h4>Truyền Thông Sự Kiện</h4>
+                            <span>Hỗ trợ kế hoạch & ấn phẩm cho sự kiện tại Đại học Trà Vinh.</span>
+                        </div>
+                    </label>
+                    <label class="service-opt-card" onclick="toggleServiceCard(this)">
+                        <input type="checkbox" name="service_choice" value="Thiết kế ấn phẩm đồ họa nhận diện">
+                        <div class="service-opt-info">
+                            <h4>Thiết Kế Ấn Phẩm</h4>
+                            <span>Banner, poster, bộ nhận diện đồ họa số theo yêu cầu.</span>
+                        </div>
+                    </label>
+                    <label class="service-opt-card" onclick="toggleServiceCard(this)">
+                        <input type="checkbox" name="service_choice" value="Tư vấn giải pháp AI & Tiện ích số">
+                        <div class="service-opt-info">
+                            <h4>Giải Pháp AI & Tiện Ích</h4>
+                            <span>Tối ưu hóa công cụ làm việc và tự động hóa quy trình.</span>
+                        </div>
+                    </label>
+                </div>
+                
+                <button type="button" class="btn-apply-service" id="apply-service-btn">
+                    <i class="fa-solid fa-arrow-down"></i> Đưa Các Lựa Chọn Này Vào Biểu Mẫu Liên Hệ
+                </button>
             </div>
         </section>
 
@@ -1000,7 +1179,7 @@
                 </div>
                 <div class="faq-card">
                     <div class="faq-question">Tôi có thể liên hệ hợp tác làm web hoặc truyền thông bằng cách nào? <i class="fa-solid fa-chevron-down"></i></div>
-                    <div class="faq-answer">Bạn có thể điền thông tin vào biểu mẫu liên hệ bên dưới hoặc nhắn trực tiếp qua các kênh mạng xã hội được đính kèm ở chân trang.</div>
+                    <div class="faq-answer">Bạn có thể dùng bảng tùy chọn dịch vụ ở trên, điền thông tin vào biểu mẫu liên hệ bên dưới hoặc nhắn trực tiếp qua Facebook cá nhân và các kênh mạng xã hội ở chân trang.</div>
                 </div>
                 <div class="faq-card">
                     <div class="faq-question">Các dự án cá nhân có được hỗ trợ tùy chỉnh theo yêu cầu không? <i class="fa-solid fa-chevron-down"></i></div>
@@ -1014,27 +1193,27 @@
             <div class="section-header">
                 <span class="section-tag">Kết Nối Với Tôi</span>
                 <h2 class="section-title">Gửi Yêu Cầu Hỗ Trợ</h2>
-                <p class="section-subtitle">Hãy để lại lời nhắn, mình sẽ phản hồi trong thời gian sớm nhất.</p>
+                <p class="section-subtitle">Hãy để lại lời nhắn, dữ liệu sẽ được gửi trực tiếp đến hệ thống của mình.</p>
             </div>
 
             <div class="contact-box">
-                <div id="success-alert"><i class="fa-solid fa-circle-check"></i> Cảm ơn bạn! Yêu cầu của bạn đã được gửi thành công.</div>
+                <div id="success-alert"><i class="fa-solid fa-circle-check"></i> Cảm ơn bạn! Yêu cầu của bạn đã được gửi thành công vào hệ thống.</div>
                 <form id="contact-form">
                     <div class="form-row">
                         <div class="form-group">
                             <label>Họ và Tên</label>
-                            <input type="text" id="name" placeholder="Nhập tên của bạn..." required>
+                            <input type="text" id="name" name="name" placeholder="Nhập tên của bạn..." required>
                         </div>
                         <div class="form-group">
                             <label>Email liên hệ</label>
-                            <input type="email" id="email" placeholder="name@example.com" required>
+                            <input type="email" id="email" name="email" placeholder="name@example.com" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>Nội dung lời nhắn / Yêu cầu</label>
-                        <textarea id="message" rows="5" placeholder="Chia sẻ ý tưởng hoặc yêu cầu của bạn..." required></textarea>
+                        <label>Nội dung lời nhắn / Yêu cầu dịch vụ</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Chia sẻ ý tưởng hoặc chọn dịch vụ ở phía trên..." required></textarea>
                     </div>
-                    <button type="submit" class="btn-submit"><i class="fa-solid fa-paper-plane"></i> Gửi Yêu Cầu</button>
+                    <button type="submit" class="btn-submit" id="submit-btn"><i class="fa-solid fa-paper-plane"></i> Gửi Yêu Cầu</button>
                 </form>
             </div>
         </section>
@@ -1047,6 +1226,11 @@
             <div class="footer-col">
                 <h4 style="color: #fff;"><i class="fa-solid fa-terminal" style="color: var(--primary);"></i> KTA.TEAMS</h4>
                 <p>Không gian lưu trữ dự án và phát triển giải pháp số cá nhân tại Vĩnh Long & Trà Vinh.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/tuanan1001" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.tiktok.com/@tuananpf47" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://kaizen1001.github.io/portfolio/" target="_blank" title="Portfolio"><i class="fa-solid fa-globe"></i></a>
+                </div>
             </div>
             <div class="footer-col">
                 <h4>Liên Kết Nhanh</h4>
@@ -1062,7 +1246,7 @@
                 <ul>
                     <li><i class="fa-solid fa-location-dot"></i> Đại học Trà Vinh, Vĩnh Long</li>
                     <li><i class="fa-solid fa-envelope"></i> contact@ktateams.id.vn</li>
-                    <li><i class="fa-solid fa-globe"></i> ktateams.id.vn</li>
+                    <li><i class="fa-solid fa-globe"></i> <a href="https://kaizen1001.github.io/portfolio/" target="_blank" style="color:var(--text-muted)">Portfolio Website</a></li>
                 </ul>
             </div>
         </div>
@@ -1123,7 +1307,7 @@
                 let outputText = '';
                 switch(cmd) {
                     case 'help':
-                        outputText = 'Các lệnh khả dụng:\n- about: Thông tin về Kim Tuấn An\n- skills: Kỹ năng & Lĩnh vực hoạt động\n- tvu: Thông tin trường Đại học Trà Vinh\n- contact: Phương thức liên hệ\n- clear: Xóa màn hình terminal';
+                        outputText = 'Các lệnh khả dụng:\n- about: Thông tin về Kim Tuấn An\n- skills: Kỹ năng & Lĩnh vực hoạt động\n- tvu: Thông tin trường Đại học Trà Vinh\n- contact: Mạng xã hội & Liên hệ\n- clear: Xóa màn hình terminal';
                         break;
                     case 'about':
                         outputText = 'Kim Tuấn An - Sinh sống tại Vĩnh Long, đang học tập tại Đại học Trà Vinh. Chuyên gia giải pháp truyền thông & web.';
@@ -1135,7 +1319,7 @@
                         outputText = 'Trường Đại học Trà Vinh (TVU) - Ngôi trường năng động tại khu vực Đồng bằng sông Cửu Long.';
                         break;
                     case 'contact':
-                        outputText = 'Email: contact@ktateams.id.vn\nĐịa điểm: Vĩnh Long / Đại học Trà Vinh';
+                        outputText = 'Facebook: facebook.com/tuanan1001\nTikTok: tiktok.com/@tuananpf47\nPortfolio: kaizen1001.github.io/portfolio/';
                         break;
                     case 'clear':
                         terminalHistory.innerHTML = '';
@@ -1206,7 +1390,36 @@
             });
         });
 
-        // 6. FAQ Accordion
+        // 6. Service Configurator Selection Logic
+        function toggleServiceCard(card) {
+            const checkbox = card.querySelector('input[type="checkbox"]');
+            checkbox.checked = !checkbox.checked;
+            if (checkbox.checked) {
+                card.classList.add('selected');
+            } else {
+                card.classList.remove('selected');
+            }
+        }
+
+        const applyServiceBtn = document.getElementById('apply-service-btn');
+        applyServiceBtn.addEventListener('click', () => {
+            const selectedServices = [];
+            document.querySelectorAll('input[name="service_choice"]:checked').forEach(cb => {
+                selectedServices.push(cb.value);
+            });
+
+            const messageBox = document.getElementById('message');
+            if (selectedServices.length > 0) {
+                messageBox.value = `Xin chào KTA, tôi muốn đăng ký các dịch vụ sau:\n- ` + selectedServices.join('\n- ');
+            } else {
+                messageBox.value = 'Xin chào KTA, tôi muốn trao đổi thêm về các giải pháp số và truyền thông.';
+            }
+
+            // Scroll to contact form smoothly
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // 7. FAQ Accordion
         const faqCards = document.querySelectorAll('.faq-card');
         faqCards.forEach(card => {
             const question = card.querySelector('.faq-question');
@@ -1218,19 +1431,35 @@
             });
         });
 
-        // 7. Contact Form Simulation
+        // 8. Contact Form Integration with Google Apps Script
         const contactForm = document.getElementById('contact-form');
         const successAlert = document.getElementById('success-alert');
+        const submitBtn = document.getElementById('submit-btn');
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzVY_xH_JDv9mpspLc0vvYH6UcKSMOWWAIDgXiuj3eCuUek6CT0frAHcQCQTxPtRV1R/exec';
+
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            successAlert.style.display = 'block';
-            contactForm.reset();
-            setTimeout(() => {
-                successAlert.style.display = 'none';
-            }, 5000);
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang gửi...';
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(contactForm)})
+                .then(response => {
+                    successAlert.style.display = 'block';
+                    contactForm.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Gửi Yêu Cầu';
+                    setTimeout(() => {
+                        successAlert.style.display = 'none';
+                    }, 5000);
+                })
+                .catch(error => {
+                    alert('Có lỗi xảy ra, vui lòng thử lại sau!');
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Gửi Yêu Cầu';
+                });
         });
 
-        // 8. Scroll Top Button & Reveal Animation
+        // 9. Scroll Top Button & Reveal Animation
         const scrollTopBtn = document.getElementById('scrollTopBtn');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {
@@ -1255,7 +1484,6 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Trigger initial reveal check
         window.dispatchEvent(new Event('scroll'));
     </script>
 </body>
