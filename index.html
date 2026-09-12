@@ -1605,48 +1605,18 @@
             });
         });
 
-        // 8. Contact Form Integration (Tối ưu riêng cho GitHub Pages)
-        const contactForm = document.getElementById('contact-form');
-        const successAlert = document.getElementById('success-alert');
-        const submitBtn = document.getElementById('submit-btn');
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzVY_xH_JDv9mpspLc0vvYH6UcKSMOWWAIDgXiuj3eCuUek6CT0frAHcQCQTxPtRV1R/exec';
-
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang gửi...';
-
-            // Đóng gói dữ liệu dạng URL-encoded
-            const formData = new URLSearchParams();
-            formData.append('name', document.getElementById('name').value);
-            formData.append('email', document.getElementById('email').value);
-            formData.append('message', document.getElementById('message').value);
-
-            // Gửi dữ liệu qua chế độ no-cors để tránh bị GitHub Pages chặn
-            fetch(scriptURL, { 
-                method: 'POST', 
-                mode: 'no-cors', // Bỏ qua kiểm tra CORS của trình duyệt
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: formData.toString()
-            })
-            .then(() => {
-                // Với no-cors, request sẽ thành công và ghi nhận vào Sheet
-                successAlert.style.display = 'block';
-                contactForm.reset();
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Gửi Yêu Cầu';
-                setTimeout(() => { successAlert.style.display = 'none'; }, 5000);
-            })
-            .catch(error => {
-                console.error('Lỗi gửi form:', error);
-                alert('Có lỗi xảy ra, vui lòng thử lại!');
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Gửi Yêu Cầu';
-            });
-        });
-
+        <form action="https://formspree.io/f/xanyyzyz" method="POST" id="contact-form">
+    <input type="text" name="name" id="name" placeholder="Họ và tên" required>
+    <input type="email" name="email" id="email" placeholder="Email của bạn" required>
+    <textarea name="message" id="message" placeholder="Nội dung lời nhắn" required></textarea>
+    
+    <!-- Tự động chuyển hướng lại trang sau khi gửi thành công -->
+    <input type="hidden" name="_next" value="https://kimtuanan.github.io/"> 
+    
+    <button type="submit" id="submit-btn">
+        <i class="fa-solid fa-paper-plane"></i> Gửi Yêu Cầu
+    </button>
+</form>
         // 9. Scroll Reveal Animation
         window.addEventListener('scroll', () => {
             const reveals = document.querySelectorAll('.reveal');
