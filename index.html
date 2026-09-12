@@ -1506,73 +1506,33 @@
             }
         });
 
-        // --- CHATBOT TƯƠNG TÁC THÔNG MINH (KNOWLEDGE BASE) ---
+        // THÔNG BÁO TÍNH NĂNG AI ĐANG PHÁT TRIỂN
         const aiInput = document.getElementById('ai-chat-input');
         const aiSend = document.getElementById('ai-chat-send');
         const aiBody = document.getElementById('ai-chat-body');
 
-        // Dữ liệu câu hỏi & trả lời (Dành cho Chào hỏi & Báo giá)
-        function getAiResponse(userMessage) {
-            const msg = userMessage.toLowerCase();
-
-            // 1. Nhóm Chào hỏi & Hỏi thăm
-            if (msg.includes('chào') || msg.includes('hello') || msg.includes('hi') || msg.includes('ha') || msg.includes('alo') || msg.includes('hey')) {
-                return "Dạ xin chào bạn! Mình là trợ lý AI của Kim Tuấn An. Bạn cần mình tư vấn hay báo giá dịch vụ nào hôm nay ạ?";
-            }
-            if (msg.includes('khỏe không') || msg.includes('tên gì') || msg.includes('bạn là ai')) {
-                return "Mình là trợ lý ảo KTA Assistant, rất sẵn sàng hỗ trợ bạn tìm hiểu về các giải pháp số và dịch vụ truyền thông của Tuấn An!";
-            }
-
-            // 2. Nhóm Hỏi Báo Giá / Chi Phí Dịch Vụ
-            if (msg.includes('giá') || msg.includes('bao nhiêu') || msg.includes('chi phí') || msg.includes('báo giá') || msg.includes('tốn bao nhiêu')) {
-                if (msg.includes('web') || msg.includes('portfolio') || msg.includes('trang web')) {
-                    return "Dịch vụ **Lập trình Web Portfolio cá nhân** có giá khởi điểm khoảng **250.000 VNĐ** (tùy thuộc vào các yêu cầu bổ sung). Bạn có thể thử dùng công cụ 'Ước Tính Chi Phí' ở trên để xem chi tiết nhé!";
-                }
-                if (msg.includes('truyền thông') || msg.includes('banner') || msg.includes('sự kiện') || msg.includes('thiết kế')) {
-                    return "Gói **Ấn phẩm truyền thông sự kiện / Thiết kế Banner** có giá từ **100.000 VNĐ**. Hỗ trợ thiết kế nhanh cho các hoạt động sinh viên, Đoàn - Hội!";
-                }
-                if (msg.includes('ai') || msg.includes('tự động') || msg.includes('bot')) {
-                    return "Gói **Tích hợp Trợ lý AI & Workspace** tự động hóa làm việc có giá từ **350.000 VNĐ**.";
-                }
-                return "Hiện tại KTA.Teams có 3 gói chính:\n- **Truyền thông sự kiện:** từ 100k\n- **Web Portfolio:** từ 250k\n- **Tích hợp AI Workspace:** từ 350k\n\nBạn quan tâm đến dịch vụ nào để mình tư vấn chi tiết hơn?";
-            }
-
-            // 3. Nhóm Hỏi Địa điểm / Thông tin liên hệ
-            if (msg.includes('ở đâu') || msg.includes('địa chỉ') || msg.includes('trà vinh') || msg.includes('vĩnh long')) {
-                return "Kim Tuấn An hiện đang sinh sống tại **Vĩnh Long** và theo học tại **Đại học Trà Vinh (TVU)**.";
-            }
-            if (msg.includes('liên hệ') || msg.includes('sđt') || msg.includes('email') || msg.includes('fb') || msg.includes('facebook')) {
-                return "Bạn có thể gửi yêu cầu trực tiếp qua form **Liên Hệ** bên dưới, hoặc gửi email đến **kta.teams.2026@gmail.com**, hay nhắn tin qua Facebook cá nhân của Tuấn An nhé!";
-            }
-
-            // Trả lời mặc định nếu không khớp từ khóa
-            return "Cảm ơn bạn đã nhắn tin! Để nhận tư vấn và báo giá chính xác nhất theo yêu cầu riêng, bạn hãy để lại lời nhắn ở phần **Liên Hệ** bên dưới hoặc sử dụng bộ công cụ **Tính Giá** tự động nhé!";
-        }
-
-        // Xử lý gửi tin nhắn
         function sendAiMessage() {
             const msg = aiInput.value.trim();
             if(!msg) return;
 
-            // Hiển thị tin nhắn người dùng
+            // 1. Hiển thị tin nhắn người dùng
             aiBody.innerHTML += `<div class="chat-msg user">${msg}</div>`;
             aiInput.value = '';
             aiBody.scrollTop = aiBody.scrollHeight;
 
-            // Tạo trạng thái "Đang xử lý..."
+            // 2. Tạo trạng thái "Đang xử lý..."
             const loadingId = 'loading-' + Date.now();
-            aiBody.innerHTML += `<div class="chat-msg bot" id="${loadingId}"><i class="fa-solid fa-spinner fa-spin"></i> Đang suy nghĩ...</div>`;
+            aiBody.innerHTML += `<div class="chat-msg bot" id="${loadingId}"><i class="fa-solid fa-spinner fa-spin"></i> Đang xử lý...</div>`;
             aiBody.scrollTop = aiBody.scrollHeight;
 
-            // Trả lời sau khoảng thời gian giả lập suy nghĩ (600ms)
+            // 3. Phản hồi thông báo hệ thống đang phát triển
             setTimeout(() => {
-                const responseText = getAiResponse(msg);
-                document.getElementById(loadingId).innerHTML = responseText.replace(/\n/g, '<br>');
+                document.getElementById(loadingId).innerHTML = `AI đang được phát triển để đem đến trải nghiệm tốt hơn! Vui lòng liên hệ trực tiếp qua phần <a href="#contact" style="color: var(--primary); font-weight: bold;">Liên Hệ</a> bên dưới để được hỗ trợ nhanh nhất nhé.`;
                 aiBody.scrollTop = aiBody.scrollHeight;
-            }, 600);
+            }, 800);
         }
 
-        // Bắt sự kiện Click nút gửi & Enter
+        // Bắt sự kiện Click nút gửi & Nhấn phím Enter
         if (aiSend) aiSend.addEventListener('click', sendAiMessage);
         if (aiInput) {
             aiInput.addEventListener('keydown', (e) => { 
