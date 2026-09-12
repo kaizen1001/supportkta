@@ -1126,6 +1126,11 @@
             <div class="hero-buttons">
                 <a href="#projects" class="btn-main btn-primary"><i class="fa-solid fa-compass"></i> Khám Phá Dự Án</a>
                 <a href="#calculator" class="btn-main btn-secondary"><i class="fa-solid fa-calculator"></i> Tính Báo Giá Dịch Vụ</a>
+                
+                <!-- NÚT MỚI: Dán link vào href. Nếu để trống href="" thì nút tự động ẩn -->
+                <a href="https://example.com" id="custom-dynamic-btn" target="_blank" class="btn-main btn-secondary">
+                    <i class="fa-solid fa-link"></i> Xem Chi Tiết
+                </a>
             </div>
 
             <!-- Quick Stats -->
@@ -1605,18 +1610,6 @@
             });
         });
 
-        <form action="https://formspree.io/f/xanyyzyz" method="POST" id="contact-form">
-    <input type="text" name="name" id="name" placeholder="Họ và tên" required>
-    <input type="email" name="email" id="email" placeholder="Email của bạn" required>
-    <textarea name="message" id="message" placeholder="Nội dung lời nhắn" required></textarea>
-    
-    <!-- Tự động chuyển hướng lại trang sau khi gửi thành công -->
-    <input type="hidden" name="_next" value="https://kimtuanan.github.io/"> 
-    
-    <button type="submit" id="submit-btn">
-        <i class="fa-solid fa-paper-plane"></i> Gửi Yêu Cầu
-    </button>
-</form>
         // 9. Scroll Reveal Animation
         window.addEventListener('scroll', () => {
             const reveals = document.querySelectorAll('.reveal');
@@ -1629,6 +1622,17 @@
             });
         });
         window.dispatchEvent(new Event('scroll'));
+
+        // 10. Logic Tự Động Ẩn / Hiện Nút Link Mới
+        const dynamicBtn = document.getElementById('custom-dynamic-btn');
+        if (dynamicBtn) {
+            const link = dynamicBtn.getAttribute('href') ? dynamicBtn.getAttribute('href').trim() : '';
+            if (!link || link === '#' || link === '') {
+                dynamicBtn.style.display = 'none';
+            } else {
+                dynamicBtn.style.display = 'inline-flex';
+            }
+        }
     </script>
 </body>
 </html>
