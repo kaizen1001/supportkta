@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="logokta1.png">
-    <title>KTA.Teams | Kim Tuấn An - Digital Workspace & Services</title>
+    <title>KTA.Teams | Kim Tuấn An - Digital Workspace & Portfolio</title>
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Plus Jakarta Sans & Fira Code -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -28,23 +28,6 @@
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        /* Color Themes */
-        body.theme-cyan {
-            --primary: #06b6d4;
-            --primary-glow: rgba(6, 182, 212, 0.25);
-            --border-hover: rgba(6, 182, 212, 0.4);
-        }
-        body.theme-green {
-            --primary: #10b981;
-            --primary-glow: rgba(16, 185, 129, 0.25);
-            --border-hover: rgba(16, 185, 129, 0.4);
-        }
-        body.theme-purple {
-            --primary: #a855f7;
-            --primary-glow: rgba(168, 85, 247, 0.25);
-            --border-hover: rgba(168, 85, 247, 0.4);
         }
 
         * {
@@ -69,7 +52,7 @@
         ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.15); border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
 
-        /* Màn hình chào */
+        /* --- MÀN HÌNH CHÀO (SPLASH SCREEN) --- */
         #splash-screen {
             position: fixed;
             inset: 0;
@@ -129,7 +112,7 @@
             opacity: 0.95;
         }
 
-        /* Ambient Glow Background */
+        /* Hiệu ứng nền Ambient Glow */
         .ambient-glow {
             position: fixed;
             border-radius: 50%;
@@ -140,7 +123,7 @@
         .glow-1 { width: 500px; height: 500px; background: rgba(236, 72, 153, 0.12); top: -100px; left: -100px; }
         .glow-2 { width: 500px; height: 500px; background: rgba(139, 92, 246, 0.1); bottom: -100px; right: -100px; }
 
-        /* Navigation Bar */
+        /* --- NAVIGATION BAR --- */
         header {
             position: fixed;
             top: 20px;
@@ -148,7 +131,7 @@
             transform: translateX(-50%);
             width: 92%;
             max-width: 1200px;
-            background: rgba(15, 15, 22, 0.85);
+            background: rgba(15, 15, 22, 0.8);
             backdrop-filter: blur(20px);
             border: 1px solid var(--border-color);
             border-radius: 40px;
@@ -186,33 +169,11 @@
         .nav-menu a:hover, .nav-menu a.active {
             color: var(--text-main);
         }
-
         .nav-actions {
             display: flex;
             gap: 10px;
             align-items: center;
         }
-        .theme-picker {
-            display: flex;
-            gap: 6px;
-            background: rgba(255,255,255,0.05);
-            padding: 4px 8px;
-            border-radius: 20px;
-            border: 1px solid var(--border-color);
-        }
-        .theme-dot {
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-        .theme-dot:hover { transform: scale(1.2); }
-        .dot-pink { background: #ec4899; }
-        .dot-cyan { background: #06b6d4; }
-        .dot-green { background: #10b981; }
-        .dot-purple { background: #a855f7; }
-
         .btn-action-nav {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border-color);
@@ -274,7 +235,7 @@
             border-bottom: 1px solid var(--border-color);
         }
 
-        /* Main Container & Sections */
+        /* --- MAIN CONTAINER & SECTIONS --- */
         .main-container {
             max-width: 1100px;
             margin: 0 auto;
@@ -283,7 +244,7 @@
 
         /* Hero Section */
         .hero-section {
-            min-height: 70vh;
+            min-height: 75vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -361,7 +322,7 @@
         .btn-secondary { background: var(--surface-color); color: var(--text-main); border: 1px solid var(--border-color); backdrop-filter: blur(10px); }
         .btn-secondary:hover { background: rgba(255,255,255,0.08); border-color: var(--text-muted); transform: translateY(-2px); }
 
-        /* Website Intro Banner */
+        /* --- WEBSITE INTRO BANNER --- */
         .website-intro-card {
             background: linear-gradient(135deg, rgba(236, 72, 153, 0.08), rgba(139, 92, 246, 0.08));
             border: 1px solid var(--border-hover);
@@ -440,7 +401,7 @@
             margin: 0 auto;
         }
 
-        /* Services & Grid */
+        /* --- DASHBOARD WIDGETS & TOOLS --- */
         .grid-layout {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -492,131 +453,31 @@
         }
         .card-action:hover { gap: 12px; }
 
-        /* --- COST / QUOTE CALCULATOR SECTION --- */
-        .calculator-box {
-            background: var(--surface-color);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 35px;
-            margin-bottom: 70px;
-            backdrop-filter: blur(15px);
-        }
-        .calc-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 25px;
-        }
-        .calc-group label {
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            display: block;
-            color: var(--text-main);
-        }
-        .calc-select, .calc-check {
-            width: 100%;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid var(--border-color);
-            color: #fff;
-            padding: 12px 16px;
-            border-radius: 12px;
-            outline: none;
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-        }
-        .calc-select option { background: #12121a; color: #fff; }
-        .calc-addons {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .addon-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.88rem;
-            color: var(--text-muted);
-            cursor: pointer;
-        }
-        .addon-item input { accent-color: var(--primary); width: 16px; height: 16px; }
-        .calc-summary {
-            background: rgba(0,0,0,0.3);
-            border: 1px dashed var(--border-hover);
-            border-radius: 18px;
-            padding: 25px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            text-align: center;
-        }
-        .calc-total-label { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; }
-        .calc-total-price { font-size: 2.2rem; font-weight: 800; color: var(--primary); margin: 10px 0; }
-
-        /* --- TIMELINE / ROADMAP --- */
-        .timeline-wrapper {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto 70px;
-            padding-left: 30px;
-            border-left: 2px solid var(--border-color);
-        }
-        .timeline-item {
-            position: relative;
-            margin-bottom: 35px;
-        }
-        .timeline-dot {
-            position: absolute;
-            left: -37px;
-            top: 4px;
-            width: 12px;
-            height: 12px;
-            background: var(--primary);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--primary);
-        }
-        .timeline-date {
-            font-size: 0.82rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 4px;
-        }
-        .timeline-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; }
-        .timeline-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
-
-        /* --- FLOATING AI CHATBOT & TERMINAL WIDGETS --- */
-        .floating-controls {
+        /* --- FLOATING TERMINAL WIDGET --- */
+        #floating-terminal-btn {
             position: fixed;
-            bottom: 30px;
+            bottom: 95px;
             right: 30px;
             z-index: 99;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .floating-btn {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: white;
+            border: none;
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            border: none;
-            color: #fff;
-            font-size: 1.2rem;
             cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: 0 8px 25px var(--primary-glow);
+            transition: var(--transition);
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-            transition: var(--transition);
         }
-        #btn-toggle-terminal { background: linear-gradient(135deg, var(--secondary), var(--primary)); }
-        #btn-toggle-ai { background: linear-gradient(135deg, var(--accent-cyan), var(--primary)); }
-        .floating-btn:hover { transform: scale(1.1) rotate(5deg); }
+        #floating-terminal-btn:hover { transform: scale(1.1) rotate(10deg); }
 
-        /* Terminal Window */
         .terminal-window {
             position: fixed;
-            bottom: 100px;
+            bottom: 160px;
             right: 30px;
             width: 400px;
             max-width: calc(100vw - 40px);
@@ -628,8 +489,15 @@
             z-index: 100;
             box-shadow: 0 25px 50px rgba(0,0,0,0.7);
             display: none;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .terminal-window.active { display: block; }
+        .terminal-window.active {
+            display: block;
+            transform: translateY(0);
+            opacity: 1;
+        }
         .terminal-header {
             background: rgba(255, 255, 255, 0.04);
             padding: 12px 16px;
@@ -675,85 +543,37 @@
             flex-grow: 1;
         }
 
-        /* AI Chatbot Window */
-        .ai-chat-window {
-            position: fixed;
-            bottom: 100px;
-            right: 30px;
-            width: 380px;
-            max-width: calc(100vw - 40px);
-            background: var(--surface-solid);
-            border: 1px solid var(--border-hover);
-            border-radius: 20px;
-            overflow: hidden;
-            z-index: 100;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
-            display: none;
-            flex-direction: column;
-            height: 420px;
-        }
-        .ai-chat-window.active { display: flex; }
-        .ai-chat-header {
-            background: rgba(255,255,255,0.05);
-            padding: 14px 18px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 1px solid var(--border-color);
-        }
-        .ai-chat-body {
-            padding: 15px;
-            flex-grow: 1;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            font-size: 0.88rem;
-        }
-        .chat-msg {
-            max-width: 80%;
-            padding: 10px 14px;
-            border-radius: 14px;
-            line-height: 1.5;
-        }
-        .chat-msg.bot {
-            background: rgba(255,255,255,0.06);
-            color: var(--text-main);
-            align-self: flex-start;
-            border-bottom-left-radius: 2px;
-        }
-        .chat-msg.user {
-            background: var(--primary);
-            color: #fff;
-            align-self: flex-end;
-            border-bottom-right-radius: 2px;
-        }
-        .ai-chat-input-row {
-            padding: 12px;
-            border-top: 1px solid var(--border-color);
-            display: flex;
-            gap: 8px;
-        }
-        .ai-chat-input {
-            flex-grow: 1;
-            background: rgba(255,255,255,0.05);
+        /* --- MINI GAME WIDGET --- */
+        .minigame-box {
+            background: linear-gradient(145deg, rgba(18,18,26,0.9), rgba(10,10,15,0.95));
             border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 8px 12px;
-            color: #fff;
-            font-size: 0.85rem;
-            outline: none;
+            border-radius: 20px;
+            padding: 35px;
+            text-align: center;
+            margin-bottom: 70px;
+            position: relative;
         }
-        .btn-send-chat {
-            background: var(--primary);
+        .minigame-score {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 15px 0;
+            font-variant-numeric: tabular-nums;
+        }
+        .btn-game {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: #fff;
             border: none;
-            padding: 8px 14px;
-            border-radius: 10px;
+            padding: 12px 30px;
+            border-radius: 12px;
+            font-weight: 700;
             cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 8px 20px var(--primary-glow);
         }
+        .btn-game:active { transform: scale(0.96); }
 
-        /* Projects Filter Section */
+        /* --- PROJECTS FILTER SECTION --- */
         .filter-buttons {
             display: flex;
             justify-content: center;
@@ -833,7 +653,58 @@
             color: #fff;
         }
 
-        /* FAQ Section */
+        /* --- CUSTOMER SERVICE CONFIGURATOR / REQUEST BUILDER --- */
+        .service-configurator {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 35px;
+            max-width: 750px;
+            margin: 0 auto 50px;
+            backdrop-filter: blur(15px);
+        }
+        .service-configurator h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 8px; text-align: center; }
+        .service-configurator p { color: var(--text-muted); font-size: 0.9rem; text-align: center; margin-bottom: 25px; }
+        .service-options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        .service-opt-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .service-opt-card:hover { border-color: var(--border-hover); background: rgba(255,255,255,0.05); }
+        .service-opt-card.selected {
+            border-color: var(--primary);
+            background: rgba(236, 72, 153, 0.08);
+        }
+        .service-opt-card input[type="checkbox"] { accent-color: var(--primary); width: 18px; height: 18px; margin-top: 2px; }
+        .service-opt-info h4 { font-size: 0.92rem; font-weight: 700; margin-bottom: 4px; }
+        .service-opt-info span { font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; display: block; }
+        .btn-apply-service {
+            width: 100%;
+            background: rgba(236, 72, 153, 0.15);
+            border: 1px solid rgba(236, 72, 153, 0.4);
+            color: #f472b6;
+            padding: 12px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .btn-apply-service:hover { background: var(--primary); color: #fff; }
+
+        /* --- FAQ SECTION --- */
         .faq-wrapper {
             max-width: 750px;
             margin: 0 auto 70px;
@@ -869,7 +740,7 @@
         .faq-card.active .faq-answer { display: block; }
         .faq-card.active .faq-question i { transform: rotate(180deg); }
 
-        /* Contact Section */
+        /* --- CONTACT FORM SECTION --- */
         .contact-box {
             background: var(--surface-color);
             border: 1px solid var(--border-color);
@@ -933,7 +804,7 @@
             font-weight: 500;
         }
 
-        /* Footer */
+        /* --- FOOTER --- */
         footer {
             border-top: 1px solid var(--border-color);
             background: rgba(8, 8, 12, 0.95);
@@ -992,6 +863,27 @@
             margin: 0 auto;
         }
 
+        /* Scroll Top Button */
+        #scrollTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            width: 50px;
+            height: 50px;
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+        #scrollTopBtn:hover { transform: translateY(-5px); border-color: var(--primary); }
+
         /* Animation Reveal */
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
@@ -1000,10 +892,10 @@
         @media (max-width: 768px) {
             .nav-menu, .nav-actions .btn-action-nav:not(:last-child) { display: none; }
             .mobile-toggle { display: block; }
-            .form-row, .calc-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
             .stats-grid { grid-template-columns: 1fr; }
             .website-intro-card { grid-template-columns: 1fr; }
-            .terminal-window, .ai-chat-window { width: calc(100vw - 20px); right: 10px; bottom: 90px; }
+            .terminal-window { width: calc(100vw - 20px); right: 10px; bottom: 150px; }
         }
     </style>
 </head>
@@ -1012,7 +904,7 @@
     <!-- Màn Hình Chào Mở Đầu -->
     <div id="splash-screen">
         <div class="splash-card">
-            <div class="splash-logo">KTA.WORKSPACE</div>
+            <div class="splash-logo">KTA.WORK</div>
             <p class="splash-sub"><i class="fa-solid fa-location-dot"></i> Đại học Trà Vinh • Vĩnh Long</p>
             <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 25px;">
                 Hệ thống lưu trữ dự án, dịch vụ kỹ thuật số và không gian tương tác cá nhân của Kim Tuấn An.
@@ -1034,19 +926,11 @@
         <a href="https://kaizen1001.github.io/portfolio/" target="_blank" class="brand"><i class="fa-solid fa-terminal" style="color: var(--primary);"></i> KTA<span>.TEAMS</span></a>
         <ul class="nav-menu">
             <li><a href="#about" class="active">Hồ Sơ</a></li>
-            <li><a href="#workspace">Dịch Vụ</a></li>
-            <li><a href="#calculator">Tính Giá</a></li>
+            <li><a href="#workspace">Tiện Ích</a></li>
             <li><a href="#projects">Dự Án</a></li>
             <li><a href="#faq">Hỏi Đáp</a></li>
         </ul>
         <div class="nav-actions">
-            <!-- Theme Picker -->
-            <div class="theme-picker" title="Đổi màu giao diện">
-                <div class="theme-dot dot-pink" onclick="setTheme('pink')"></div>
-                <div class="theme-dot dot-cyan" onclick="setTheme('cyan')"></div>
-                <div class="theme-dot dot-green" onclick="setTheme('green')"></div>
-                <div class="theme-dot dot-purple" onclick="setTheme('purple')"></div>
-            </div>
             <a href="#contact" class="btn-action-nav"><i class="fa-solid fa-paper-plane"></i> Liên Hệ</a>
             <div class="mobile-toggle" id="mobile-toggle">
                 <i class="fa-solid fa-bars"></i>
@@ -1058,28 +942,22 @@
     <ul class="mobile-drawer" id="mobile-drawer">
         <li><a href="#about" class="mobile-nav-link">Hồ Sơ Bản Thân</a></li>
         <li><a href="#workspace" class="mobile-nav-link">Tiện Ích & Dịch Vụ</a></li>
-        <li><a href="#calculator" class="mobile-nav-link">Ước Tính Chi Phí</a></li>
         <li><a href="#projects" class="mobile-nav-link">Dự Án & Demo</a></li>
         <li><a href="#faq" class="mobile-nav-link">Câu Hỏi Thường Gặp</a></li>
         <li><a href="#contact" class="mobile-nav-link" style="color: var(--primary); border:none;">Gửi Yêu Cầu Hỗ Trợ</a></li>
     </ul>
 
-    <!-- FLOATING CONTROLS (TERMINAL & AI CHATBOT) -->
-    <div class="floating-controls">
-        <button class="floating-btn" id="btn-toggle-ai" title="Trợ lý Chatbot AI"><i class="fa-solid fa-robot"></i></button>
-        <button class="floating-btn" id="btn-toggle-terminal" title="Mở Terminal Lệnh"><i class="fa-solid fa-terminal"></i></button>
-    </div>
-
-    <!-- TERMINAL WINDOW -->
+    <!-- FLOATING TERMINAL WIDGET -->
+    <button id="floating-terminal-btn" title="Mở Terminal Lệnh"><i class="fa-solid fa-terminal"></i></button>
     <div class="terminal-window" id="terminal-window">
         <div class="terminal-header">
             <div class="terminal-dots">
-                <div class="t-dot t-red" id="t-close-btn"></div>
+                <div class="t-dot t-red" id="t-close-btn" title="Đóng"></div>
                 <div class="t-dot t-yellow"></div>
                 <div class="t-dot t-green"></div>
             </div>
             <div class="terminal-title">bash - kta@workspace</div>
-            <i class="fa-solid fa-xmark" id="t-close-icon" style="font-size: 0.8rem; color: var(--text-muted); cursor: pointer;"></i>
+            <div><i class="fa-solid fa-xmark" id="t-close-icon" style="font-size: 0.8rem; color: var(--text-muted); cursor: pointer;"></i></div>
         </div>
         <div class="terminal-body" id="terminal-screen">
             <div class="terminal-line">Chào mừng bạn đến với Terminal của KTA!</div>
@@ -1090,24 +968,6 @@
                 <span class="t-prompt">kta:~$</span>
                 <input type="text" id="terminal-user-input" class="terminal-input" placeholder="Gõ lệnh (vd: about, skills, contact)...">
             </div>
-        </div>
-    </div>
-
-    <!-- AI CHATBOT WINDOW -->
-    <div class="ai-chat-window" id="ai-chat-window">
-        <div class="ai-chat-header">
-            <div style="display:flex; align-items:center; gap:8px;">
-                <i class="fa-solid fa-robot" style="color:var(--primary)"></i>
-                <span style="font-weight:700; font-size:0.9rem;">KTA Assistant (AI)</span>
-            </div>
-            <i class="fa-solid fa-xmark" id="ai-close-btn" style="cursor:pointer; color:var(--text-muted)"></i>
-        </div>
-        <div class="ai-chat-body" id="ai-chat-body">
-            <div class="chat-msg bot">Xin chào! Mình là trợ lý AI của Kim Tuấn An. Bạn cần tư vấn về dịch vụ làm Web, Truyền thông sự kiện hay cách thức liên hệ?</div>
-        </div>
-        <div class="ai-chat-input-row">
-            <input type="text" id="ai-chat-input" class="ai-chat-input" placeholder="Nhập câu hỏi...">
-            <button class="btn-send-chat" id="ai-chat-send"><i class="fa-solid fa-paper-plane"></i></button>
         </div>
     </div>
 
@@ -1125,12 +985,7 @@
             </p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn-main btn-primary"><i class="fa-solid fa-compass"></i> Khám Phá Dự Án</a>
-                <a href="#calculator" class="btn-main btn-secondary"><i class="fa-solid fa-calculator"></i> Tính Báo Giá Dịch Vụ</a>
-                
-                <!-- NÚT MỚI: Dán link vào href. Nếu để trống href="" thì nút tự động ẩn -->
-                <a href="https://www.facebook.com/tuanan1001/" id="custom-dynamic-btn" target="_blank" class="btn-main btn-secondary">
-                    <i class="fa-solid fa-link"></i> Xem Chi Tiết
-                </a>
+                <button class="btn-main btn-secondary" id="hero-open-terminal"><i class="fa-solid fa-terminal"></i> Mở Terminal Nhanh</button>
             </div>
 
             <!-- Quick Stats -->
@@ -1150,14 +1005,14 @@
             </div>
         </section>
 
-        <!-- Tổng Quan Trang Web Banner -->
+        <!-- --- GIỚI THIỆU TỔNG QUAN TRANG WEB --- -->
         <section class="reveal">
             <div class="website-intro-card">
                 <div class="intro-content">
                     <span class="section-tag" style="margin-bottom: 6px;">Tổng Quan Nền Tảng</span>
                     <h3>Về KTA Digital Workspace</h3>
                     <p>
-                        Đây là trung tâm điều phối và lưu trữ dự án cá nhân được xây dựng theo phong cách hiện đại, tích hợp công nghệ web tiên tiến cùng các widget tương tác thông minh như Terminal dòng lệnh, Trợ lý AI và Công cụ tính báo giá tự động.
+                        Đây là trung tâm điều phối và lưu trữ dự án cá nhân được xây dựng theo phong cách hiện đại, tích hợp công nghệ web tiên tiến cùng các widget tương tác thông minh như Terminal dòng lệnh và Mini Game.
                     </p>
                     <p style="margin-bottom: 0;">
                         Khách hàng và bạn bè có thể dễ dàng xem hồ sơ năng lực, tìm hiểu các giải pháp truyền thông sự kiện, hoặc gửi yêu cầu đặt dịch vụ nhanh chóng chỉ với vài cú nhấp chuột.
@@ -1168,46 +1023,16 @@
                         <i class="fa-solid fa-laptop-code"></i> Giao diện chuẩn UI/UX, responsive mượt mà.
                     </div>
                     <div class="feature-item">
-                        <i class="fa-solid fa-robot"></i> Trợ lý AI Chatbot & Terminal giả lập thông minh.
+                        <i class="fa-solid fa-terminal"></i> Terminal giả lập tra cứu thông tin cá nhân.
                     </div>
                     <div class="feature-item">
-                        <i class="fa-solid fa-calculator"></i> Công cụ tính báo giá dịch vụ tự động.
+                        <i class="fa-solid fa-paper-plane"></i> Tích hợp Google Apps Script nhận dữ liệu tức thì.
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Timeline Roadmap Section -->
-        <section class="reveal">
-            <div class="section-header">
-                <span class="section-tag">Hành Trình Phát Triển</span>
-                <h2 class="section-title">Lộ Trình & Cột Mốc</h2>
-                <p class="section-subtitle">Chặng đường học tập, rèn luyện và xây dựng thương hiệu cá nhân.</p>
-            </div>
-
-            <div class="timeline-wrapper">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">HIỆN TẠI</div>
-                    <div class="timeline-title">Phát Triển KTA Digital Workspace</div>
-                    <div class="timeline-desc">Tập trung nghiên cứu các giải pháp truyền thông số, xây dựng landing page và hỗ trợ các dự án sinh viên tại Vĩnh Long & Trà Vinh.</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">SINH VIÊN TVU</div>
-                    <div class="timeline-title">Đại Học Trà Vinh</div>
-                    <div class="timeline-desc">Tích cực tham gia các hoạt động Đoàn - Hội, thiết kế ấn phẩm truyền thông và tổ chức sự kiện quy mô trường.</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">KHỞI ĐẦU</div>
-                    <div class="timeline-title">Khám Phá Công Nghệ & Đồ Họa</div>
-                    <div class="timeline-desc">Bắt đầu học lập trình web cơ bản, thiết kế đồ họa nhận diện thương hiệu cá nhân tại Vĩnh Long.</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Section -->
+        <!-- Workspace & Tools Section -->
         <section class="reveal" id="workspace">
             <div class="section-header">
                 <span class="section-tag">Tiện Ích & Dịch Vụ</span>
@@ -1237,58 +1062,19 @@
             </div>
         </section>
 
-        <!-- COST / QUOTE CALCULATOR SECTION -->
-        <section class="reveal" id="calculator">
-            <div class="section-header">
-                <span class="section-tag">Công Cụ Thông Minh</span>
-                <h2 class="section-title">Ước Tính Chi Phí Dịch Vụ</h2>
-                <p class="section-subtitle">Tự do tùy chọn hạng mục công việc để xem mức ngân sách ước tính ban đầu.</p>
-            </div>
-
-            <div class="calculator-box">
-                <div class="calc-grid">
-                    <div>
-                        <div class="calc-group">
-                            <label><i class="fa-solid fa-layer-group" style="color:var(--primary)"></i> Chọn gói dịch vụ chính:</label>
-                            <select id="calc-main-service" class="calc-select">
-                                <option value="100000" data-name="Thiết kế Impress/Banner truyền thông">Ấn phẩm truyền thông sự kiện (~ 100k)</option>
-                                <option value="250000" data-name="Xây dựng Web Portfolio cá nhân">Lập trình Web Portfolio cá nhân (~ 250tr)</option>
-                                <option value="3500000" data-name="Trợ lý AI & Tự động hóa">Tích hợp Trợ lý AI & Workspace (~ 350k)</option>
-                            </select>
-                        </div>
-
-                        <div class="calc-group">
-                            <label><i class="fa-solid fa-puzzle-piece" style="color:var(--primary)"></i> Tùy chọn bổ sung (Add-ons):</label>
-                            <div class="calc-addons">
-                                <label class="addon-item">
-                                    <input type="checkbox" value="60000" data-addon="Tối ưu SEO / Tốc độ trang" class="calc-addon-cb">
-                                    <span>Tối ưu SEO & Tốc độ tải trang (+60k)</span>
-                                </label>
-                                <label class="addon-item">
-                                    <input type="checkbox" value="50000" data-addon="Hỗ trợ tên miền & Hosting" class="calc-addon-cb">
-                                    <span>Hướng dẫn cấu hình Domain / Hosting (+50k)</span>
-                                </label>
-                                <label class="addon-item">
-                                    <input type="checkbox" value="80000" data-addon="Hoàn thành cấp tốc trong 24h" class="calc-addon-cb">
-                                    <span>Giao hàng gấp trong 24h - 48h (+80k)</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="calc-summary">
-                        <div class="calc-total-label">Tổng Chi Phí Ước Tính</div>
-                        <div class="calc-total-price" id="calc-total-display">500.000 VNĐ</div>
-                        <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 15px;">* Mức giá mang tính tham khảo, có thể thay đổi dựa theo yêu cầu chi tiết.</p>
-                        <button type="button" class="btn-main btn-primary" id="btn-copy-calc" style="width:100%; justify-content:center;">
-                            <i class="fa-solid fa-file-import"></i> Đưa Chi Phí Này Vào Form
-                        </button>
-                    </div>
-                </div>
+        <!-- Mini Game Widget Section -->
+        <section class="reveal">
+            <div class="minigame-box">
+                <span class="section-tag">Giải Trí Nhanh</span>
+                <h3 style="font-size: 1.5rem; font-weight: 700; margin-top: 5px;">Thử Thách Clicker Tốc Độ</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 8px;">Bấm nút liên tục trong thời gian ngắn để kiểm tra độ nhanh nhạy của bạn!</p>
+                <div class="minigame-score" id="game-score">0</div>
+                <button class="btn-game" id="game-btn"><i class="fa-solid fa-bolt"></i> Bấm Ngay!</button>
+                <p style="color: var(--text-muted); font-size: 0.82rem; margin-top: 15px;" id="game-timer">Thời gian: 10s (Bấm để bắt đầu)</p>
             </div>
         </section>
 
-        <!-- Projects Filter Section -->
+        <!-- Projects & Filter Section -->
         <section class="reveal" id="projects">
             <div class="section-header">
                 <span class="section-tag">Hồ Sơ Năng Lực</span>
@@ -1314,13 +1100,13 @@
                         <a href="https://kaizen1001.github.io/portfolio/" target="_blank" class="project-link-btn">Truy cập Website</a>
                     </div>
                 </div>
-                <!-- Project 2 -->
+                <!-- Project 2 (Updated link to Portfolio) -->
                 <div class="project-card" data-category="media">
                     <div class="project-banner" style="background: linear-gradient(135deg, #0f172a, #1e293b);"></div>
                     <div class="project-details">
-                        <h3>Ấn Phẩm Sự Kiện TVU</h3>
-                        <p>Thiết kế bộ nhận diện truyền thông và banner cổ động cho các chiến dịch tình nguyện tại Đại học Trà Vinh.</p>
-                        <a href="https://www.facebook.com/tuanan1001" target="_blank" class="project-link-btn"><i class="fa-brands fa-facebook"></i> Xem trên Facebook</a>
+                        <h3>Ấn Phẩm Sự Kiện</h3>
+                        <p>Thiết kế bộ nhận diện truyền thông và banner cổ động cho các chiến dịch tình nguyện.</p>
+                        <a href="https://kaizen1001.github.io/portfolio/" target="_blank" class="project-link-btn">Xem trên Portfolio</a>
                     </div>
                 </div>
                 <!-- Project 3 -->
@@ -1328,10 +1114,53 @@
                     <div class="project-banner" style="background: linear-gradient(135deg, #18181b, #27272a);"></div>
                     <div class="project-details">
                         <h3>KTA TikTok Showcase</h3>
-                        <p>Kênh chia sẻ các video thủ thuật công nghệ, đời sống sinh viên và các khoảnh khắc tại Đại học Trà Vinh.</p>
-                        <a href="https://www.tiktok.com/@tuananpf47" target="_blank" class="project-link-btn"><i class="fa-brands fa-tiktok"></i> Xem kênh TikTok</a>
+                        <p>Kênh chia sẻ các video, hình ảnh đời sống sinh viên và các khoảnh khắc tại Đại học Trà Vinh.</p>
+                        <a href="https://www.tiktok.com/@tuananpf47" target="_blank" class="project-link-btn">Xem kênh TikTok</a>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- --- CUSTOMER SERVICE SELECTION CONFIGURATOR --- -->
+        <section class="reveal">
+            <div class="service-configurator">
+                <h3><i class="fa-solid fa-list-check" style="color: var(--primary);"></i> Lựa Chọn Dịch Vụ & Yêu Cầu Của Bạn</h3>
+                <p>Khách hàng có thể chọn các hạng mục cần hỗ trợ dưới đây để hệ thống tự động điền vào biểu mẫu liên hệ.</p>
+                
+                <div class="service-options-grid">
+                    <label class="service-opt-card" onclick="toggleServiceCard(this)">
+                        <input type="checkbox" name="service_choice" value="Phát triển Web Portfolio cá nhân">
+                        <div class="service-opt-info">
+                            <h4>Web Portfolio</h4>
+                            <span>Thiết kế trang web cá nhân, landing page chuẩn hiện đại.</span>
+                        </div>
+                    </label>
+                    <label class="service-opt-card" onclick="toggleServiceCard(this)">
+                        <input type="checkbox" name="service_choice" value="Truyền thông sự kiện Đoàn - Hội TVU">
+                        <div class="service-opt-info">
+                            <h4>Truyền Thông Sự Kiện</h4>
+                            <span>Hỗ trợ kế hoạch & ấn phẩm cho sự kiện tại Đại học Trà Vinh.</span>
+                        </div>
+                    </label>
+                    <label class="service-opt-card" onclick="toggleServiceCard(this)">
+                        <input type="checkbox" name="service_choice" value="Thiết kế ấn phẩm đồ họa nhận diện">
+                        <div class="service-opt-info">
+                            <h4>Thiết Kế Ấn Phẩm</h4>
+                            <span>Banner, poster, bộ nhận diện đồ họa số theo yêu cầu.</span>
+                        </div>
+                    </label>
+                    <label class="service-opt-card" onclick="toggleServiceCard(this)">
+                        <input type="checkbox" name="service_choice" value="Tư vấn giải pháp AI & Tiện ích số">
+                        <div class="service-opt-info">
+                            <h4>Giải Pháp AI & Tiện Ích</h4>
+                            <span>Tối ưu hóa công cụ làm việc và tự động hóa quy trình.</span>
+                        </div>
+                    </label>
+                </div>
+                
+                <button type="button" class="btn-apply-service" id="apply-service-btn">
+                    <i class="fa-solid fa-arrow-down"></i> Đưa Các Lựa Chọn Này Vào Biểu Mẫu Liên Hệ
+                </button>
             </div>
         </section>
 
@@ -1350,7 +1179,7 @@
                 </div>
                 <div class="faq-card">
                     <div class="faq-question">Tôi có thể liên hệ hợp tác làm web hoặc truyền thông bằng cách nào? <i class="fa-solid fa-chevron-down"></i></div>
-                    <div class="faq-answer">Bạn có thể sử dụng công cụ tính giá ở trên, điền thông tin vào biểu mẫu liên hệ bên dưới hoặc gửi email trực tiếp tới kta.teams.2026@gmail.com.</div>
+                    <div class="faq-answer">Bạn có thể dùng bảng tùy chọn dịch vụ ở trên, điền thông tin vào biểu mẫu liên hệ bên dưới hoặc nhắn trực tiếp qua Facebook cá nhân và các kênh mạng xã hội ở chân trang.</div>
                 </div>
                 <div class="faq-card">
                     <div class="faq-question">Các dự án cá nhân có được hỗ trợ tùy chỉnh theo yêu cầu không? <i class="fa-solid fa-chevron-down"></i></div>
@@ -1381,8 +1210,8 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>Nội dung lời nhắn / Chi tiết báo giá</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Chia sẻ ý tưởng hoặc nhập thông tin dịch vụ..." required></textarea>
+                        <label>Nội dung lời nhắn / Yêu cầu dịch vụ</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Chia sẻ ý tưởng hoặc chọn dịch vụ ở phía trên..." required></textarea>
                     </div>
                     <button type="submit" class="btn-submit" id="submit-btn"><i class="fa-solid fa-paper-plane"></i> Gửi Yêu Cầu</button>
                 </form>
@@ -1408,7 +1237,6 @@
                 <ul>
                     <li><a href="#about">Hồ Sơ Cá Nhân</a></li>
                     <li><a href="#workspace">Tiện Ích Số</a></li>
-                    <li><a href="#calculator">Ước Tính Chi Phí</a></li>
                     <li><a href="#projects">Dự Án Nổi Bật</a></li>
                     <li><a href="#contact">Biểu Mẫu Liên Hệ</a></li>
                 </ul>
@@ -1417,7 +1245,7 @@
                 <h4>Thông Tin Liên Hệ</h4>
                 <ul>
                     <li><i class="fa-solid fa-location-dot"></i> Đại học Trà Vinh, Vĩnh Long</li>
-                    <li><i class="fa-solid fa-envelope"></i> kta.teams.2026@gmail.com</li>
+                    <li><i class="fa-solid fa-envelope"></i> contact@ktateams.id.vn</li>
                     <li><i class="fa-solid fa-globe"></i> <a href="https://kaizen1001.github.io/portfolio/" target="_blank" style="color:var(--text-muted)">Portfolio Website</a></li>
                 </ul>
             </div>
@@ -1427,9 +1255,12 @@
         </div>
     </footer>
 
+    <!-- Scroll Top Button -->
+    <button id="scrollTopBtn" title="Lên đầu trang"><i class="fa-solid fa-arrow-up"></i></button>
+
     <!-- JavaScript Tương Tác -->
     <script>
-        // 1. Splash Screen
+        // 1. Màn hình chào (Splash Screen)
         const splashScreen = document.getElementById('splash-screen');
         const enterBtn = document.getElementById('enter-btn');
         enterBtn.addEventListener('click', () => {
@@ -1447,37 +1278,27 @@
             link.addEventListener('click', () => mobileDrawer.classList.remove('active'));
         });
 
-        // 3. Theme Switcher Logic
-        function setTheme(theme) {
-            document.body.className = '';
-            if (theme !== 'pink') {
-                document.body.classList.add('theme-' + theme);
-            }
-        }
-
-        // 4. Terminal & AI Chatbot Toggle Logic
-        const btnTerminal = document.getElementById('btn-toggle-terminal');
-        const btnAi = document.getElementById('btn-toggle-ai');
-        const terminalWin = document.getElementById('terminal-window');
-        const aiWin = document.getElementById('ai-chat-window');
-
-        btnTerminal.addEventListener('click', () => {
-            aiWin.classList.remove('active');
-            terminalWin.classList.toggle('active');
-        });
-        btnAi.addEventListener('click', () => {
-            terminalWin.classList.remove('active');
-            aiWin.classList.toggle('active');
-        });
-
-        document.getElementById('t-close-btn').addEventListener('click', () => terminalWin.classList.remove('active'));
-        document.getElementById('t-close-icon').addEventListener('click', () => terminalWin.classList.remove('active'));
-        document.getElementById('ai-close-btn').addEventListener('click', () => aiWin.classList.remove('active'));
-
-        // Terminal Command Logic
+        // 3. Floating Terminal Logic
+        const terminalBtn = document.getElementById('floating-terminal-btn');
+        const heroOpenTerminal = document.getElementById('hero-open-terminal');
+        const terminalWindow = document.getElementById('terminal-window');
+        const tCloseBtn = document.getElementById('t-close-btn');
+        const tCloseIcon = document.getElementById('t-close-icon');
         const terminalInput = document.getElementById('terminal-user-input');
         const terminalHistory = document.getElementById('terminal-history');
 
+        function toggleTerminal() {
+            terminalWindow.classList.toggle('active');
+            if (terminalWindow.classList.contains('active')) {
+                terminalInput.focus();
+            }
+        }
+        terminalBtn.addEventListener('click', toggleTerminal);
+        if(heroOpenTerminal) heroOpenTerminal.addEventListener('click', toggleTerminal);
+        tCloseBtn.addEventListener('click', () => terminalWindow.classList.remove('active'));
+        tCloseIcon.addEventListener('click', () => terminalWindow.classList.remove('active'));
+
+        // Terminal Command Processor
         terminalInput.addEventListener('keydown', function(e) {
             if (e.key === 'Enter') {
                 const cmd = terminalInput.value.trim().toLowerCase();
@@ -1486,101 +1307,70 @@
                 let outputText = '';
                 switch(cmd) {
                     case 'help':
-                        outputText = 'Các lệnh khả dụng:\n- about: Thông tin về Kim Tuấn An\n- email: Email liên hệ chính thức\n- skills: Kỹ năng chính\n- clear: Xóa màn hình';
+                        outputText = 'Các lệnh khả dụng:\n- about: Thông tin về Kim Tuấn An\n- skills: Kỹ năng & Lĩnh vực hoạt động\n- tvu: Thông tin trường Đại học Trà Vinh\n- contact: Mạng xã hội & Liên hệ\n- clear: Xóa màn hình terminal';
                         break;
                     case 'about':
-                        outputText = 'Kim Tuấn An - Sinh sống tại Vĩnh Long, học tập tại Đại học Trà Vinh (TVU).';
-                        break;
-                    case 'email':
-                        outputText = 'Email chính thức: kta.teams.2026@gmail.com';
+                        outputText = 'Kim Tuấn An - Sinh sống tại Vĩnh Long, đang học tập tại Đại học Trà Vinh. Chuyên gia giải pháp truyền thông & web.';
                         break;
                     case 'skills':
-                        outputText = '- Thiết kế Web Portfolio & UI/UX\n- Truyền thông sự kiện Đoàn - Hội TVU\n- Tích hợp AI Workspace';
+                        outputText = '- Phát triển Web Frontend & UI/UX\n- Truyền thông sự kiện Đoàn - Hội\n- Tối ưu hóa Tiện ích số & AI';
+                        break;
+                    case 'tvu':
+                        outputText = 'Trường Đại học Trà Vinh (TVU) - Ngôi trường năng động tại khu vực Đồng bằng sông Cửu Long.';
+                        break;
+                    case 'contact':
+                        outputText = 'Facebook: facebook.com/tuanan1001\nTikTok: tiktok.com/@tuananpf47\nPortfolio: kaizen1001.github.io/portfolio/';
                         break;
                     case 'clear':
                         terminalHistory.innerHTML = '';
                         terminalInput.value = '';
                         return;
                     default:
-                        outputText = `Lệnh không hợp lệ: "${cmd}". Gõ "help" để xem trợ giúp.`;
+                        outputText = `Lệnh không hợp lệ: "${cmd}". Gõ "help" để xem danh sách lệnh.`;
                 }
 
                 terminalHistory.innerHTML += `<div class="terminal-line"><span class="t-prompt">kta:~$</span> <span class="t-cmd">${cmd}</span></div><div class="t-output">${outputText}</div>`;
                 terminalInput.value = '';
-                document.getElementById('terminal-screen').scrollTop = document.getElementById('terminal-screen').scrollHeight;
+                const terminalBody = document.getElementById('terminal-screen');
+                terminalBody.scrollTop = terminalBody.scrollHeight;
             }
         });
 
-        // THÔNG BÁO TÍNH NĂNG AI ĐANG PHÁT TRIỂN
-        const aiInput = document.getElementById('ai-chat-input');
-        const aiSend = document.getElementById('ai-chat-send');
-        const aiBody = document.getElementById('ai-chat-body');
+        // 4. Mini Game Clicker
+        let score = 0;
+        let timeLeft = 10;
+        let gamePlaying = false;
+        let timerInterval;
+        const gameBtn = document.getElementById('game-btn');
+        const gameScore = document.getElementById('game-score');
+        const gameTimer = document.getElementById('game-timer');
 
-        function sendAiMessage() {
-            const msg = aiInput.value.trim();
-            if(!msg) return;
-
-            // 1. Hiển thị tin nhắn người dùng
-            aiBody.innerHTML += `<div class="chat-msg user">${msg}</div>`;
-            aiInput.value = '';
-            aiBody.scrollTop = aiBody.scrollHeight;
-
-            // 2. Tạo trạng thái "Đang xử lý..."
-            const loadingId = 'loading-' + Date.now();
-            aiBody.innerHTML += `<div class="chat-msg bot" id="${loadingId}"><i class="fa-solid fa-spinner fa-spin"></i> Đang xử lý...</div>`;
-            aiBody.scrollTop = aiBody.scrollHeight;
-
-            // 3. Phản hồi thông báo hệ thống đang phát triển
-            setTimeout(() => {
-                document.getElementById(loadingId).innerHTML = `AI đang được phát triển để đem đến trải nghiệm tốt hơn! Vui lòng liên hệ trực tiếp qua phần <a href="#contact" style="color: var(--primary); font-weight: bold;">Liên Hệ</a> bên dưới để được hỗ trợ nhanh nhất nhé.`;
-                aiBody.scrollTop = aiBody.scrollHeight;
-            }, 800);
-        }
-
-        // Bắt sự kiện Click nút gửi & Nhấn phím Enter
-        if (aiSend) aiSend.addEventListener('click', sendAiMessage);
-        if (aiInput) {
-            aiInput.addEventListener('keydown', (e) => { 
-                if(e.key === 'Enter') sendAiMessage(); 
-            });
-        }
-
-        // 5. Cost Calculator Logic
-        const mainServiceSelect = document.getElementById('calc-main-service');
-        const addonCbs = document.querySelectorAll('.calc-addon-cb');
-        const totalDisplay = document.getElementById('calc-total-display');
-        const btnCopyCalc = document.getElementById('btn-copy-calc');
-
-        function calculateTotal() {
-            let total = parseInt(mainServiceSelect.value);
-            addonCbs.forEach(cb => {
-                if(cb.checked) total += parseInt(cb.value);
-            });
-            totalDisplay.textContent = total.toLocaleString('vi-VN') + ' VNĐ';
-        }
-
-        mainServiceSelect.addEventListener('change', calculateTotal);
-        addonCbs.forEach(cb => cb.addEventListener('change', calculateTotal));
-
-        btnCopyCalc.addEventListener('click', () => {
-            const selectedOpt = mainServiceSelect.options[mainServiceSelect.selectedIndex];
-            const mainName = selectedOpt.getAttribute('data-name');
-            let addonsText = [];
-            addonCbs.forEach(cb => {
-                if(cb.checked) addonsText.push(cb.getAttribute('data-addon'));
-            });
-
-            let finalMsg = `Xin chào KTA, tôi muốn đăng ký dịch vụ:\n- Dịch vụ chính: ${mainName}\n`;
-            if(addonsText.length > 0) {
-                finalMsg += `- Tùy chọn thêm: ${addonsText.join(', ')}\n`;
+        gameBtn.addEventListener('click', () => {
+            if (!gamePlaying) {
+                gamePlaying = true;
+                score = 0;
+                timeLeft = 10;
+                gameScore.textContent = score;
+                gameBtn.textContent = 'Bấm Liên Tục!';
+                
+                timerInterval = setInterval(() => {
+                    timeLeft--;
+                    gameTimer.textContent = `Thời gian còn lại: ${timeLeft}s`;
+                    if (timeLeft <= 0) {
+                        clearInterval(timerInterval);
+                        gamePlaying = false;
+                        gameBtn.textContent = 'Chơi Lại';
+                        gameTimer.textContent = `Kết quả cuối cùng: ${score} điểm!`;
+                    }
+                }, 1000);
             }
-            finalMsg += `- Mức giá ước tính: ${totalDisplay.textContent}`;
-
-            document.getElementById('message').value = finalMsg;
-            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            if (gamePlaying) {
+                score++;
+                gameScore.textContent = score;
+            }
         });
 
-        // 6. Projects Filter
+        // 5. Projects Filter
         const filterBtns = document.querySelectorAll('.filter-btn');
         const projectCards = document.querySelectorAll('.project-card');
 
@@ -1600,39 +1390,101 @@
             });
         });
 
+        // 6. Service Configurator Selection Logic
+        function toggleServiceCard(card) {
+            const checkbox = card.querySelector('input[type="checkbox"]');
+            checkbox.checked = !checkbox.checked;
+            if (checkbox.checked) {
+                card.classList.add('selected');
+            } else {
+                card.classList.remove('selected');
+            }
+        }
+
+        const applyServiceBtn = document.getElementById('apply-service-btn');
+        applyServiceBtn.addEventListener('click', () => {
+            const selectedServices = [];
+            document.querySelectorAll('input[name="service_choice"]:checked').forEach(cb => {
+                selectedServices.push(cb.value);
+            });
+
+            const messageBox = document.getElementById('message');
+            if (selectedServices.length > 0) {
+                messageBox.value = `Xin chào KTA, tôi muốn đăng ký các dịch vụ sau:\n- ` + selectedServices.join('\n- ');
+            } else {
+                messageBox.value = 'Xin chào KTA, tôi muốn trao đổi thêm về các giải pháp số và truyền thông.';
+            }
+
+            // Scroll to contact form smoothly
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        });
+
         // 7. FAQ Accordion
         const faqCards = document.querySelectorAll('.faq-card');
         faqCards.forEach(card => {
             const question = card.querySelector('.faq-question');
             question.addEventListener('click', () => {
-                faqCards.forEach(c => { if (c !== card) c.classList.remove('active'); });
+                faqCards.forEach(c => {
+                    if (c !== card) c.classList.remove('active');
+                });
                 card.classList.toggle('active');
             });
         });
 
-        // 9. Scroll Reveal Animation
+        // 8. Contact Form Integration with Google Apps Script
+        const contactForm = document.getElementById('contact-form');
+        const successAlert = document.getElementById('success-alert');
+        const submitBtn = document.getElementById('submit-btn');
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzVY_xH_JDv9mpspLc0vvYH6UcKSMOWWAIDgXiuj3eCuUek6CT0frAHcQCQTxPtRV1R/exec';
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang gửi...';
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(contactForm)})
+                .then(response => {
+                    successAlert.style.display = 'block';
+                    contactForm.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Gửi Yêu Cầu';
+                    setTimeout(() => {
+                        successAlert.style.display = 'none';
+                    }, 5000);
+                })
+                .catch(error => {
+                    alert('Có lỗi xảy ra, vui lòng thử lại sau!');
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Gửi Yêu Cầu';
+                });
+        });
+
+        // 9. Scroll Top Button & Reveal Animation
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
         window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.style.display = 'block';
+            } else {
+                scrollTopBtn.style.display = 'none';
+            }
+
+            // Reveal on Scroll
             const reveals = document.querySelectorAll('.reveal');
             reveals.forEach(el => {
                 const windowHeight = window.innerHeight;
                 const elementTop = el.getBoundingClientRect().top;
-                if (elementTop < windowHeight - 120) {
+                const elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
                     el.classList.add('active');
                 }
             });
         });
-        window.dispatchEvent(new Event('scroll'));
 
-        // 10. Logic Tự Động Ẩn / Hiện Nút Link Mới
-        const dynamicBtn = document.getElementById('custom-dynamic-btn');
-        if (dynamicBtn) {
-            const link = dynamicBtn.getAttribute('href') ? dynamicBtn.getAttribute('href').trim() : '';
-            if (!link || link === '#' || link === '') {
-                dynamicBtn.style.display = 'none';
-            } else {
-                dynamicBtn.style.display = 'inline-flex';
-            }
-        }
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        window.dispatchEvent(new Event('scroll'));
     </script>
 </body>
 </html>
